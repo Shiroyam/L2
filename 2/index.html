@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <header class="title">
+      <h1>Генератор мемов</h1>
+    </header>
+
+    <section class="tools">
+      <div class="wrapper">
+        <select id="font" class="select">
+          <option class="font">Arial</option>
+          <option class="font">Courier</option>
+          <option class="font">MS Serif</option>
+          <option class="font">Times New Roman</option>
+        </select>
+
+        <select id="color" class="select">
+          <option id="red">red</option>
+          <option id="blue">blue</option>
+          <option id="white">white</option>
+          <option id="black">black</option>
+          <option id="pink">pink</option>
+          <option id="orange">orange</option>
+        </select>
+
+        <select id="weight" class="select">
+          <option class="style">normal</option>
+          <option class="style">bold</option>
+          <option class="style">lighter</option>
+        </select>
+
+        <input placeholder="16px" type="number" class="size" />
+      </div>
+
+      <input class="input" id="text" placeholder="текс" />
+      <button class="input" id="add">Добавить</button>
+    </section>
+
+    <canvas class="canvas"> </canvas>
+
+    <section>
+      <input type="file" id="load" />
+      <button id="remove">Очистить</button>
+      <button id="save">Сохранить</button>
+    </section>
+  </body>
+
+  <script src="./index.js"></script>
+</html>

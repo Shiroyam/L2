@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: rgb(212,208,200);
+}
+
+.canvas {
+  background-color: white;
+  margin-bottom: 25px;
+}
+
+.tools {
+  margin-bottom: 10px;
+}
+
+.input {
+  height: 25px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin-bottom: 8px;
+}
+
+.select {
+  height: 25px;
+  box-sizing: border-box;
+}
+
+.options {
+  display: flex;
+  width: 175px;
+  margin-bottom: 2.5px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 0.5px solid gray;
+}
+
+.size {
+  width: 57px;
+  height: 25px;
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#text {
+  width: 264px;
+}
+
+#blue {
+  background-color: blue;
+}
+
+#green {
+  background-color: green;
+}
+
+#red {
+  background-color: red;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#white {
+  background-color: white;
+}
+
+#black {
+  background-color: black;
+}
+
+#pink {
+  background-color: pink;
+}
+
+#orange {
+  background-color: orange;
+}
