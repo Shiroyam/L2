@@ -1,0 +1,86 @@
+{
+  "playlists": [
+    {
+      "id": 0,
+      "title": "louis armstrong",
+      "img": "./assets/louis-armstrong-satchmo-at-symphony-hall-vol.2.jpg",
+      "tracks": [
+        {
+          "title": "summertime",
+          "src": "./audio/louis-armstrong-summertime.mp3"
+        },
+        {
+          "title": "the-dummy-song",
+          "src": "./audio/louis-armstrong-the-dummy-song.mp3"
+        },
+        {
+          "title": "what-a-wonderful-world",
+          "src": "./audio/louis-armstrong-what-a-wonderful-world.mp3"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "michael jackson",
+      "img": "./assets/michael-jackson-bad.jpg",
+      "tracks": [
+        {
+          "title": "bad",
+          "src": "./audio/MichaelJackson-Bad.mp3"
+        },
+        {
+          "title": "remember the time",
+          "src": "./audio/MichaelJackson-RememberTheTime(MaxiGrooveRemix).mp3"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Metallica",
+      "img": "./assets/Ride_the_Lightning.jpg",
+      "tracks": [
+        {
+          "title": "For Whom the Bell Tolls",
+          "src": "./audio/Metallica-ForWhomtheBellTolls.mp3"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Петер Лещенко",
+      "img": "./assets/Pyotr_Leshchenko.jpg",
+      "tracks": [
+        {
+          "title": "Моя Марусечка",
+          "src": "./audio/ПётрЛещенко–МояМарусечка.mp3"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Metallica",
+      "img": "./assets/Ride_the_Lightning.jpg",
+      "tracks": [
+        {
+          "title": "For Whom the Bell Tolls",
+          "src": "./audio/Metallica-ForWhomtheBellTolls.mp3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "michael jackson",
+      "img": "./assets/michael-jackson-bad.jpg",
+      "tracks": [
+        {
+          "title": "bad",
+          "src": "./audio/MichaelJackson-Bad.mp3"
+        },
+        {
+          "title": "remember the time",
+          "src": "./audio/MichaelJackson-RememberTheTime(MaxiGrooveRemix).mp3"
+        }
+      ]
+    }
+  ]
+}

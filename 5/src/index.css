@@ -1,0 +1,138 @@
+:root {
+  --color-primary: #f1f3f4;
+  --color-secondary: #c8c9ca; 
+  --color-bg: #2d2d2e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-secondary);
+}
+
+h1 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+}
+
+.header {
+  padding: 20px;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+#app {
+  max-width: 1400px;
+  width: 100%;
+}
+
+.music {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--color-primary);
+  min-height: 600px;
+}
+
+.player-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#audioPlayer {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#controls {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 1400px;
+  box-sizing: border-box;
+  padding: 10px;
+  background-color: var(--color-primary);
+  border-radius: 10px;
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 999;
+  margin-bottom: 10px;
+}
+
+#currentTime{
+  color: #464646;
+}
+
+#totalDuration {
+  color: #464646;
+}
+
+#waveform {
+  height: 150px;
+  max-width: 1400px;
+  bottom: -35px;
+  width: 100%;
+  z-index: 1;
+}
+
+.tracks {
+  margin: 0;
+  max-width: 500px;
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 250px;
+  box-sizing: border-box;
+}
+
+.track {
+  background-color: var(--color-secondary);
+  border-radius: 10px;
+  padding: 10px;
+  color: #2d2d2e;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.track:hover {
+  border: 1px solid #464646;
+}
+
+.playlist-wrapper {
+  gap: 25px;
+  flex-wrap: wrap;
+  display: flex;
+  align-content: flex-start;
+}
+
+.playlist {
+  max-width: 150px;
+  max-height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playlist img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
