@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>6</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <h1 class="title">Угадай число</h1>
+
+    <div id="edit">
+      Угадай число между 
+      <input type="number" class="input range"  value="1" id="range"> и 
+      <input type="number" class="input range" value="100" id="range">
+    </div>
+
+    <div>
+      <input class="input" type="number" id="guess-input" />
+      <button class="button filled" id="submit">Ввести</button>
+    </div>
+
+    <div id="result"></div>
+
+    <div id="attempts"></div>
+
+    <button class="button default" id="reset">Играть снова</button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
