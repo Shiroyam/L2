@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"  href="index.css"/>
+    <title>9</title>
+  </head>
+  <body>
+    <h1 class="title">Калькулятор калорий</h1>
+
+    <div class="goal">
+      <input id="goal" type="number" class="input" placeholder="цель">
+      <button id="goal-btn" class="button">Задать</button>
+    </div>
+
+    <section class="calories" id="calories">
+      <div id="warning" class="warning warning--hidden">У вас превышение калорий!</div>
+
+      <div class="total">
+        <div id="eaten" class="number">0</div>
+        <div>Cъедено</div>
+      </div>
+
+      <div class="remaining">
+        <canvas id="diagram" width="200" height="250"></canvas>
+
+        <div class="total-remaining">
+          <div id="remaining" class="number">0</div>
+          <div>Осталось</div>
+        </div>
+      </div>
+      
+      <div class="total">
+        <div id="all" class="number">2000</div>
+        <div>Всего</div>
+      </div>
+    </section>
+
+    <section class="add-product">
+      <input id="name" placeholder="Продукт" class="input"></input>
+      <input id="cal" type="number" placeholder="Калории" class="input"></input>
+      <select id="select" class="input">
+        <option value="breakfast">Завтрак</option>
+        <option value="lunch">Обед</option>
+        <option value="dinner">Ужин</option>
+      </select>
+      <button id="add" class="button">Добавить</button>
+    </section>
+
+    <section class="products">
+      <input id="search" class="input" placeholder="Поиск продуктов">
+
+      <article>
+        <h4 class="title-breakfast">🍳 Завтрак</h4>
+        <div class="total-breakfast">Всего: <span class="number" id="total-breakfast">0</span></div>
+        <div class="header-list">
+          <div class="header">Продукт</div>
+          <div class="header">Калории</div>
+        </div>
+        <div id="product-list-breakfast"></div>
+      </article>
+
+      <article>
+        <h4 class="title-lunch">🥦 Обед</h4>
+        <div class="total-lunch">Всего: <span class="number" id="total-lunch">0</span></div>
+        <div class="header-list">
+          <div class="header">Продукт</div>
+          <div class="header">Калории</div>
+        </div>
+        <div id="product-list-lunch"></div>
+      </article>
+
+      <article>
+        <h4 class="title-dinner">🍜 Ужин</h4>
+        <div class="total-dinner">Всего: <span class="number" id="total-dinner">0</span></div>
+        <div class="header-list">
+          <div class="header">Продукт</div>
+          <div class="header">Калории</div>
+        </div>
+        <div id="product-list-dinner"></div>
+      </article>
+
+      <button id="remove-all" class="button">Удалить все</button>
+    </section>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
