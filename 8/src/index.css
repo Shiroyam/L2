@@ -1,0 +1,42 @@
+:root {
+  --primary-color: rgb(25, 118, 210);
+  --gray-color: rgba(0, 0, 0, 0.6);
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 15px;
+  margin: 0;
+}
+
+.button {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.input {
+  box-shadow: 2px 6px 14px 0 rgba(34,60,80,.2);
+  box-sizing: border-box;
+  padding: 8px;
+
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+}
+
+canvas {
+  border: 1px solid var(--gray-color);
+}

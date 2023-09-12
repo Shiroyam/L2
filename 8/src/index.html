@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"  href="index.css"/>
+    <title>8</title>
+  </head>
+  <body>
+    <h1>Сортировка</h1>
+
+    <div>
+      <label for="algorithm">Выберите алгоритм сортировки:</label>
+      <select class="input" id="algorithm">
+        <option value="bubble">Сортировка пузырьком</option>
+        <option value="insertion">Сортировка вставками</option>
+        <option value="selection">Сортировка выбором</option>
+        <option value="quick">Быстрая сортировка</option>
+        <option value="merge">Сортировка слиянием</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="array">Элементы массива:</label>
+      <input class="input" id="array" value="9, 1, 8, 2, 7, 3">
+    </div>
+
+    <div>
+      <button class="button" id="startBtn">Старт</button>
+      <button class="button" id="stopBtn">Стоп</button>
+    </div>
+
+    <canvas id="canvas" width="800" height="400"></canvas>
+   
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
