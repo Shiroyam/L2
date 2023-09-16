@@ -1,1 +1,1 @@
-export const baseUrl = "http://localhost:3004/api";
+export const baseUrl = "https://4backend-git-master-shiroyam.vercel.app/api";
