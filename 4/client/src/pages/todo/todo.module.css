@@ -1,0 +1,15 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.title {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.button {
+  margin-top: 20px;
+}

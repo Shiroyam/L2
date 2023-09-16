@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int     @id @default(autoincrement())
+  email        String  @unique
+  password     String
+  tasks        Task[]
+  refreshtoken String?
+}
+
+model Task {
+  id        Int       @id @default(autoincrement())
+  text      String
+  complete  Boolean
+  createdAt DateTime  @default(now())
+  doneAt    DateTime?
+  userId    Int?
+  User      User?     @relation(fields: [userId], references: [id])
+}
+
+model Subscription {
+  id             Int      @id @default(autoincrement())
+  endpoint       String
+  expirationTime DateTime
+  p256dh         String
+  auth           String
+}
+
+model Push {
+  id             Int     @id @default(autoincrement())
+  endpoint       String
+  expirationTime String?
+  p256dh         String
+  auth           String
+}

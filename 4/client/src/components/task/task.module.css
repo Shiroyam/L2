@@ -1,0 +1,62 @@
+.ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 750px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.li {
+  display: grid;
+  grid-template-areas: "checkbox text text text"
+                       ". createDate doneDate buttons";
+  grid-template-columns: 25px 250px 1fr 90px;
+  gap: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 2px 6px 14px 0 rgba(34,60,80,.2);
+}
+
+.text {
+  grid-area: text;
+}
+
+.checkbox {
+  grid-area: checkbox;
+}
+
+.createDate {
+  grid-area: createDate;
+}
+
+.doneDate {
+  grid-area: doneDate;
+}
+
+.buttons {
+  grid-area: buttons;
+  display: flex;
+  gap: 10px;
+  justify-self: end;
+  margin-right: 20px;
+}
+
+.remove {
+  padding: 0;
+  height: 20px;
+  color: red;
+}
+
+.edit {
+  padding: 0;
+  height: 20px;
+  color: orange;
+}
+
+.accept {
+  padding: 0;
+  height: 20px;
+  color: green;
+}

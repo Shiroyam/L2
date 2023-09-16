@@ -1,0 +1,35 @@
+.checkbox {
+  cursor: pointer;
+
+  position: relative;
+  width: 25px;
+  height:25px;
+
+  appearance: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+}
+
+.checkbox:checked {
+  background-color: var(--primary-color);
+}
+
+.checkbox:checked::before {
+  content: "\2713";
+
+  position: absolute;
+  left: 25%;
+
+  font-size: 100%;
+  color: white;
+}
+
+.checkbox:focus {
+  outline: none;
+}
+
+.checkbox:focus-visible {
+  outline: 1.5px solid var(--primary-color);
+  outline-offset: 1.5px;
+  border-radius: 3px;
+}

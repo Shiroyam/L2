@@ -1,0 +1,47 @@
+.button {
+  cursor: pointer;
+  user-select: none;
+
+  box-sizing: border-box;
+  padding: 8px 16px;
+  font-weight: 500;
+  
+  border: none;
+  border-radius: 3px;
+
+  transition:  all 100ms ease-out;
+}
+
+.button:active {
+  scale: 0.99;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1.6px solid var(--primary-color);
+  outline-offset: 1px;
+}
+
+.default {
+  background-color: transparent;
+}
+
+.filled {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.icon-left {
+  margin-right: 16px;
+}
+
+.icon-right {
+  margin-left:  16px;
+}
