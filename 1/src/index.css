@@ -1,0 +1,206 @@
+@font-face {
+  font-family: "Ring";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"),
+       url("/elvish_ring_nfi.ttf") format("woff2"),
+}
+
+@font-face {
+  font-family: "Anirb";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"),
+       url("/anirb.ttf") format("woff2"),
+}
+
+
+* {
+  font-family: Anirb;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+.background {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/menu.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  width: 1200px;
+  height: 800px;
+  border-radius: 10px;
+  background-color: rgba(206, 143, 90, 0.97);
+  border: 3px solid black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.menu--hidden {
+  display: none;
+}
+
+.title {
+  text-align: center;
+  margin-top: 10px;
+  font-family: Ring;
+}
+
+.info {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.hero {
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.hero:hover {
+  box-shadow: 4px -1px 8px 4px rgba(240, 244, 20, 0.2);
+}
+
+.number-soldiers {
+  background-color: #A64B00;
+  padding: 10px;
+}
+
+.button {
+  margin-top: 100px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #A64B00;
+}
+
+.button:hover {
+  box-shadow: 4px -1px 8px 4px rgba(240, 244, 20, 0.2);
+}
+
+.game--active {
+  display: flex !important;
+}
+
+.game {
+  width: 1300px;
+  height: 800px;
+  border-radius: 10px;
+  background-color: rgba(206, 143, 90, 0.97);
+  border: 3px solid black;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  display: none;
+}
+
+.choice {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+  width: 500px;
+  height: 200px;
+  background-color: #A64B00;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.battle-text {
+  font-size: 12px;
+  width: 500px;
+  height: 450px;
+  background-color: #A64B00;
+  border-radius: 10px;
+  border: 2px solid black;
+  overflow-y: auto;
+}
+
+.mySoldier {
+  color: blue;
+}
+
+.enemySoldier {
+  color: red;
+}
+
+.attack {
+  margin-bottom: 20px;
+}
+
+.my-hero {
+  position: absolute;
+  top: 25px;
+  left: 75px;
+}
+
+.my-army {
+  position: absolute;
+  top: 250px;
+  left: 30px;
+}
+
+.enemy {
+  position: absolute;
+  top: 25px;
+  right: 75px;
+}
+
+.enemy-army {
+  position: absolute;
+  top: 250px;
+  right: 10px;
+}
+
+.number {
+  background-color: rgba(206, 143, 90, 1);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.soldier {
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 50px;
+  padding: 20px;
+  background-color: #A64B00;
+}
+
+.soldier:hover {
+  box-shadow: 4px -1px 8px 4px rgba(240, 244, 20, 0.2);
+}
+
+.light {
+  text-align: center;
+  color: green;
+}
+
+.dark {
+  text-align: center;
+  color: red;
+}
+
+::-webkit-scrollbar {
+  border-radius: 0 8px 8px 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 8px;
+}

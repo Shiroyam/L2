@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div class="background">
+      <div id="menu" class="menu">
+        <h1 class="title">Game Middle Earth</h1>
+
+        <div class="info">Ваш герой</div>
+        <div id="heroes" class="heroes">
+          <img src="/aragorn.png" class="hero" />
+        </div>
+
+        <label for="soldiers">Максимальное количество войнов в отряде</label>
+        <input
+          value="50"
+          id="soldiers"
+          type="number"
+          class="number-soldiers"
+        />
+
+        <button id="start" class="button">Начать игру</button>
+      </div>
+
+      <div id="game" class="game">
+        <h1 class="title">Game Middle Earth</h1>
+
+        <div class="title-choice">Действие</div>
+        <div class="choice">
+          <div id="action">Выбери свой отряд, который будет атаковать</div>
+        </div>
+
+        <div>Ход битвы</div>
+        <div id="battle-text" class="battle-text">
+				</div>
+
+        <div class="my-hero">
+          <img src="/aragorn.png" class="hero" />
+        </div>
+        <div id="my-army" class="my-army"></div>
+
+        <div class="enemy">
+          <img src="/ork.png" class="hero" />
+        </div>
+        <div id="enemy-army" class="enemy-army"></div>
+
+				<button id="end" class="button">Закончить битву</button>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
