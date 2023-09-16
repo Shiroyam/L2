@@ -1,28 +1,29 @@
 import WaveSurfer from "wavesurfer.js";
-import * as tracksHTML from "./tracks.js";
-import * as playlistsHTML from "./playlist.js";
+import { Track } from "./tracks.js";
+import { Playlist } from "./playlist.js";
 import data from "../data.json";
 
-playlistsHTML.render(data.playlists);
-tracksHTML.render(data.playlists[0].tracks);
+const track = Track()
+const playlist = Playlist()
+
+playlist.render(data.playlists);
+track.render(data.playlists[0].tracks);
 
 document.querySelectorAll(".playlist").forEach((value) => {
   value.addEventListener("click", () => {
-    tracksHTML.render(data.playlists[value.id].tracks);
+    track.render(data.playlists[value.id].tracks);
   })
 });
 
-const audioPlayer = document.getElementById("audioPlayer");
-
-const tracks = document.getElementById("tracks");
-
+const audioPlayer = document.querySelector("#audioPlayer");
+const tracks = document.querySelector("#tracks");
 const controls = document.querySelector("#controls")
 
 const wavesurfer = WaveSurfer.create({
   height: 150,
   container: "#waveform",
   waveColor: "#c8c9ca",
-  progressColor: "#0b0b0b",
+  progressColor: "rgb(25, 118, 210)",
   cursorColor: "#adaeae",
   media: audioPlayer,
 });

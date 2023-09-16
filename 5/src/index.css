@@ -1,7 +1,7 @@
 :root {
-  --color-primary: #f1f3f4;
-  --color-secondary: #c8c9ca; 
-  --color-bg: #2d2d2e;
+  --primary-color: rgb(25, 118, 210);
+  --gray-color: #f7fbfe;
+  --color-bg: white;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
   justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: var(--color-secondary);
+  background-color: var(--gray-color);
 }
 
 h1 {
@@ -24,9 +24,13 @@ h4 {
 
 .header {
   padding: 20px;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   border-radius: 10px;
   margin-bottom: 50px;
+}
+
+.title {
+  color: var(--primary-color)
 }
 
 #app {
@@ -39,7 +43,7 @@ h4 {
   justify-content: space-between;
   border-radius: 10px;
   padding: 10px;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   min-height: 600px;
 }
 
@@ -61,7 +65,7 @@ h4 {
   max-width: 1400px;
   box-sizing: border-box;
   padding: 10px;
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   border-radius: 10px;
   display: none;
 }
@@ -101,7 +105,7 @@ h4 {
 }
 
 .track {
-  background-color: var(--color-secondary);
+  background-color: var(--gray-color);
   border-radius: 10px;
   padding: 10px;
   color: #2d2d2e;
