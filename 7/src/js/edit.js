@@ -55,7 +55,7 @@ export const EditMarker = () => {
     const name = document.querySelector("#edit-name");
     const description = document.querySelector("#edit-description");
     const color = document.querySelector("#edit-color");
-    const markerElement = document.querySelector(`#marker-${marker._leaflet_id}`);
+    const markerElement = document.querySelector(`#marker-${marker.id}`);
   
     markerElement.style.backgroundColor = color.value;
     marker.type = type.value;
