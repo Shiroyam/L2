@@ -1,0 +1,232 @@
+export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
+  const context = canvas.getContext("2d")
+  const width = canvas.width;
+  const height = canvas.height;
+  const blockWidth = width / cols;
+  const blockHeight = height / rows;
+
+  let current;
+  let currentX;
+  let currentY;
+  let lose;
+  let freezed;
+
+  const newShape = () => {
+    const id = Math.floor(Math.random() * shapes.length);
+    const shape = shapes[id];
+
+    current = [];
+    for (let y = 0; y < 4; ++y) {
+      current[y] = [];
+      for (let x = 0; x < 4; ++x) {
+        let i = 4 * y + x;
+        if (typeof shape[i] != "undefined" && shape[i]) {
+          current[y][x] = id + 1;
+        } else {
+          current[y][x] = 0;
+        }
+      }
+    }
+
+    freezed = false;
+
+    currentX = 5;
+    currentY = 0;
+  };
+
+  const init = () => {
+    for (let y = 0; y < rows; ++y) {
+      board[y] = [];
+      for (let x = 0; x < cols; ++x) {
+        board[y][x] = 0;
+      }
+    }
+  };
+
+  const removeLines = () => {
+    for (let y = rows - 1; y >= 0; --y) {
+      let rowFilled = true;
+      
+      for (let x = 0; x < cols; ++x) {
+        if (board[y][x] == 0) {
+          rowFilled = false;
+          break;
+        }
+      }
+
+      if (rowFilled) {
+        for (let yy = y; yy > 0; --yy) {
+          for (let x = 0; x < cols; ++x) {
+            board[yy][x] = board[yy - 1][x];
+          }
+        }
+
+        score.textContent = Number(score.textContent) + 1;
+        ++y;
+      }
+    }
+  };
+
+  const freeze = () => {
+    for (let y = 0; y < 4; ++y) {
+      for (let x = 0; x < 4; ++x) {
+        if (current[y][x]) {
+          board[y + currentY][x + currentX] = current[y][x];
+        }
+      }
+    }
+
+    freezed = true;
+  };
+
+  const rotate = (current) => {
+    let newCurrent = [];
+
+    for (let y = 0; y < 4; ++y) {
+      newCurrent[y] = [];
+
+      for (let x = 0; x < 4; ++x) {
+        newCurrent[y][x] = current[3 - x][y];
+      }
+    }
+
+    return newCurrent;
+  };
+
+  const valid = (offsetX, offsetY, newCurrent) => {
+    offsetX = offsetX || 0;
+    offsetY = offsetY || 0;
+    offsetX = currentX + offsetX;
+    offsetY = currentY + offsetY;
+    newCurrent = newCurrent || current;
+
+    for (let y = 0; y < 4; ++y) {
+      for (let x = 0; x < 4; ++x) {
+        if (newCurrent[y][x]) {
+          if (
+            typeof board[y + offsetY] == "undefined" ||
+            typeof board[y + offsetY][x + offsetX] == "undefined" ||
+            board[y + offsetY][x + offsetX] ||
+            x + offsetX < 0 ||
+            y + offsetY >= rows ||
+            x + offsetX >= cols
+          ) {
+            if (offsetY == 1 && freezed) {
+              lose = true;
+            }
+            return false;
+          }
+        }
+      }
+    }
+    return true;
+  };
+
+  const moveBottom = () => {
+    if (valid(0, 1)) {
+      ++currentY;
+    }
+  };
+
+  const moveLeft = () => {
+    if (valid(-1)) {
+      --currentX;
+    }
+  };
+
+  const moveRight = () => {
+    if (valid(1)) {
+      ++currentX;
+    }
+  };
+
+  const moveRotate = () => {
+    if (valid(0, 0, rotate(current))) {
+      current = rotate(current);
+    }
+  };
+
+  const render = () => {
+    context.clearRect(0, 0, width, height);
+
+    context.strokeStyle = "black";
+    for (let x = 0; x < cols; ++x) {
+      for (let y = 0; y < rows; ++y) {
+        if (board[y][x]) {
+          context.fillStyle = colors[board[y][x] - 1];
+          drawBlock(x, y);
+        }
+      }
+    }
+
+    context.strokeStyle = "black";
+    for (let y = 0; y < 4; ++y) {
+      for (let x = 0; x < 4; ++x) {
+        if (current[y][x]) {
+          context.fillStyle = colors[current[y][x] - 1];
+          drawBlock(currentX + x, currentY + y);
+        }
+      }
+    }
+  };
+
+  const drawBlock = (x, y) => {
+    context.fillRect(
+      blockWidth * x,
+      blockHeight * y,
+      blockWidth - 1,
+      blockHeight - 1
+    );
+    context.strokeRect(
+      blockWidth * x,
+      blockHeight * y,
+      blockWidth - 1,
+      blockHeight - 1
+    );
+  };
+
+  const sleep = (ms) => {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  };
+
+  const animate = async () => {
+    if (valid(0, 1)) {
+      ++currentY;
+      render();
+    } else {
+      freeze();
+      valid(0, 1);
+      removeLines();
+
+      if (lose) {
+        return;
+      }
+
+      newShape();
+    }
+
+    render();
+
+    if (!lose) {
+      await sleep(400)
+      requestAnimationFrame(animate);
+    }
+  };
+
+  const start = () => {
+    init();
+    newShape();
+    requestAnimationFrame(animate);
+
+    score.textContent = 0;
+    lose = false;
+  };
+
+  return {
+    start,
+    moveLeft,
+    moveRight,
+    moveRotate,
+    moveBottom,
+  };
+};

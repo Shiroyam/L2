@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/tetris" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css" />
+    <title>3</title>
+  </head>
+  <body>
+    <div class="tetris">
+      <h1 class="title">Tetris</h1>
+
+      <div>score: <span id="score">0</span></div>
+
+      <canvas width="300" height="500" id="field" class="field"></canvas>
+
+      <button id="start" class="button">
+        Start
+      </button>
+
+      <button id="rotate" class="joystick">
+        <img src="rotate.svg" />
+      </button>
+      <button id="top" class="joystick">
+        <img src="arrow-top.svg" />
+      </button>
+      <button id="bottom" class="joystick">
+        <img src="arrow-bottom.svg" />
+      </button>
+      <button id="left" class="joystick">
+        <img src="arrow-left.svg" />
+      </button>
+      <button id="right" class="joystick">
+        <img src="arrow-right.svg" />
+      </button>
+    </div>
+
+
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
+
