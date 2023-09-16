@@ -14,14 +14,14 @@
 
     <section class="tools">
       <div class="wrapper">
-        <select id="font" class="select">
+        <select class="input" id="font" class="select">
           <option class="font">Arial</option>
           <option class="font">Courier</option>
           <option class="font">MS Serif</option>
           <option class="font">Times New Roman</option>
         </select>
 
-        <select id="color" class="select">
+        <select class="input" id="color" class="select">
           <option id="red">red</option>
           <option id="blue">blue</option>
           <option id="white">white</option>
@@ -30,27 +30,27 @@
           <option id="orange">orange</option>
         </select>
 
-        <select id="weight" class="select">
+        <select class="input" id="weight" class="select">
           <option class="style">normal</option>
           <option class="style">bold</option>
           <option class="style">lighter</option>
         </select>
 
-        <input placeholder="16px" type="number" class="size" />
+        <input class="input" placeholder="16px" type="number" id="size" />
       </div>
 
       <input class="input" id="text" placeholder="текс" />
-      <button class="input" id="add">Добавить</button>
+      <button class="button" id="add">Добавить</button>
     </section>
 
-    <canvas class="canvas"> </canvas>
+    <canvas id="canvas" class="canvas"></canvas>
 
     <section>
       <input type="file" id="load" />
-      <button id="remove">Очистить</button>
-      <button id="save">Сохранить</button>
+      <button class="button" id="remove">Очистить</button>
+      <button class="button" id="save">Сохранить</button>
     </section>
   </body>
 
-  <script src="./index.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </html>
