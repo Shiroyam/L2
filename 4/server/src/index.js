@@ -6,14 +6,7 @@ import { router } from "./router.js";
 const PORT = 3004;
 const app = express();
 
-const option = {
-  "origin": "*",
-  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-  "preflightContinue": false,
-  "optionsSuccessStatus": 204
-}
-
-app.use(cors(option))
+app.use(cors())
 app.use(bodyParser.json());
 app.use("/api", router)
 
