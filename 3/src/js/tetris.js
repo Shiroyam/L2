@@ -1,3 +1,13 @@
+/**
+ * Логика модуля для игры в тетрис
+ * @param {HTMLCanvasElement} canvas - Элемент холста для отрисовки игры
+ * @param {number} cols - Количество колонок в игровом поле
+ * @param {number} rows - Количество строк в игровом поле
+ * @param {number[][]} board - Игровое поле
+ * @param {number[][][]} shapes - Фигуры для игры
+ * @param {string[]} colors - Цвета фигур
+ * @param {HTMLElement} score - Элемент для отображения счета игры
+ */
 export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
   const context = canvas.getContext("2d")
   const width = canvas.width;
@@ -11,6 +21,9 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
   let lose;
   let freezed;
 
+   /**
+   * Создает новую фигуру
+   */
   const newShape = () => {
     const id = Math.floor(Math.random() * shapes.length);
     const shape = shapes[id];
@@ -34,6 +47,9 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     currentY = 0;
   };
 
+  /**
+   * Создает игровое поле
+   */
   const init = () => {
     for (let y = 0; y < rows; ++y) {
       board[y] = [];
@@ -43,6 +59,9 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     }
   };
 
+  /**
+   * Удаляет заполненные линии из игрового поля
+   */
   const removeLines = () => {
     for (let y = rows - 1; y >= 0; --y) {
       let rowFilled = true;
@@ -67,6 +86,9 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     }
   };
 
+  /**
+   * Фиксирует текущую фигуру на поле
+   */
   const freeze = () => {
     for (let y = 0; y < 4; ++y) {
       for (let x = 0; x < 4; ++x) {
@@ -79,6 +101,10 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     freezed = true;
   };
 
+  /**
+   * Поворачивает фигуру
+   * @param {number[][]} current - Текущая фигура.
+   */
   const rotate = (current) => {
     let newCurrent = [];
 
@@ -93,6 +119,12 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     return newCurrent;
   };
 
+  /**
+   * Проверяет, является ли текущая позиция фигуры допустимой
+   * @param {number} offsetX - Смещение по оси X
+   * @param {number} offsetY - Смещение по оси Y
+   * @param {number[][]} newCurrent - Новая текущая фигура
+   */
   const valid = (offsetX, offsetY, newCurrent) => {
     offsetX = offsetX || 0;
     offsetY = offsetY || 0;
@@ -122,30 +154,45 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     return true;
   };
 
+  /**
+   * Сдвигает фигуру вниз
+   */
   const moveBottom = () => {
     if (valid(0, 1)) {
       ++currentY;
     }
   };
 
+  /**
+   * Сдвигает фигуру влево
+   */
   const moveLeft = () => {
     if (valid(-1)) {
       --currentX;
     }
   };
 
+  /**
+   * Сдвигает фигуру вправо
+   */
   const moveRight = () => {
     if (valid(1)) {
       ++currentX;
     }
   };
 
+  /**
+   * Поворачивает фигуру
+   */
   const moveRotate = () => {
     if (valid(0, 0, rotate(current))) {
       current = rotate(current);
     }
   };
 
+  /**
+   * Отрисовка игрового поля и текущую фигуру
+   */
   const render = () => {
     context.clearRect(0, 0, width, height);
 
@@ -170,6 +217,12 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     }
   };
 
+  
+  /**
+   * Рисует блок по указанным координатам
+   * @param {number} x
+   * @param {number} y
+   */
   const drawBlock = (x, y) => {
     context.fillRect(
       blockWidth * x,
@@ -185,10 +238,19 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     );
   };
 
+  
+  /**
+   * Создает задержку для плавной анимации
+   * @param {number} ms - Продолжительность задержки
+   */
   const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
 
+  
+  /**
+   * Анимирует
+   */
   const animate = async () => {
     if (valid(0, 1)) {
       ++currentY;
@@ -213,6 +275,9 @@ export const Tetris = (canvas, cols, rows, board, shapes, colors, score) => {
     }
   };
 
+   /**
+   * Старт игры
+   */
   const start = () => {
     init();
     newShape();
