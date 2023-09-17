@@ -1,1 +1,1 @@
-export const baseUrl = "https://4backend-git-master-shiroyam.vercel.app/api";
+export const baseUrl = "https://4serverbackend-ojuckeqeo-shiroyam.vercel.app/api";
