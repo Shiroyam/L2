@@ -20,7 +20,7 @@
 
 4. - [x] Приложение «Планировщик задач»
 
-> (vercel решил что-то поменять при деплои бэкенда и он перестал деплоится :( env ключи могу прислать в лс)
+> [deploy](https://client4-neon.vercel.app/)
 >
 > [code](https://github.com/Shiroyam/L2/tree/master/4)
 
